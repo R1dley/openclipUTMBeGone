@@ -1,1 +1,1 @@
-# openclipUTMBeGone
+An OpenClip extension to remove tracking parameters from YouTube URLs and leave a clean link. It will copy the link to the clipboard. Includes an option to add additional parameters to be stripped from the link in extension settings.
