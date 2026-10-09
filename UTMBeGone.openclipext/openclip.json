@@ -1,0 +1,79 @@
+{
+  "identifier": "com.openclip.cleanyoutube",
+  "name": {
+    "en": "Clean YouTube Link"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "Custom",
+  "description": {
+    "en": "Strips list, start_radio, t, pp, and tracking parameters from YouTube URLs."
+  },
+  "keywords": [
+    "youtube",
+    "clean youtube",
+    "clean link",
+    "strip list",
+    "url",
+    "video"
+  ],
+  "options": [
+    {
+      "identifier": "removePlaylists",
+      "label": {
+        "en": "Remove playlist parameters (&list=, &start_radio=, &index=)"
+      },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "removeTimestamps",
+      "label": {
+        "en": "Remove timestamp parameter (&t=)"
+      },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "removeTracking",
+      "label": {
+        "en": "Remove share & tracking IDs (&si=, &feature=, &utm_=)"
+      },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "removePlacement",
+      "label": {
+        "en": "Remove placement parameters (&pp=, &ab_channel=)"
+      },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "customParams",
+      "label": {
+        "en": "Additional parameters to remove (comma-separated, e.g. 'v, ref, my_param')"
+      },
+      "type": "string",
+      "default": ""
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Clean YouTube Link"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "output": "text",
+    "result": "copy",
+    "requirements": {
+      "regex": "(?i)^\\s*(https?:\\/\\/)?(www\\.|m\\.|music\\.)?(youtube\\.com|youtu\\.be)\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/\\/=]*)\\s*$"
+    },
+    "toast": {
+      "message": "YouTube link copied to clipboard",
+      "style": "success"
+    }
+  }
+}
